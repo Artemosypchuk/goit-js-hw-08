@@ -87,9 +87,9 @@ const galleryMarkup = createGalleryHtml(images);
 document.querySelector('.gallery').innerHTML = galleryMarkup;
 
 document.querySelector('ul.gallery').addEventListener('click',el => {
-    el.preventDefault();
     const {target} = el;
     if (target.nodeName !== 'IMG') return;
+    el.preventDefault();
     const {source} = target.dataset
     const instance = basicLightbox.create(`
     <img src="${source}" width="800" height="600">
